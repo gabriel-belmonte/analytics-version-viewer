@@ -1,0 +1,72 @@
+.card {
+  border: solid 2px rgb(106, 106, 106);
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 350px;
+}
+
+.head {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head img {
+  width: 30px;
+  height: 30px;
+}
+
+.head img:hover {
+  transform: scale(1.1);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+.info {
+  position: relative;
+  margin: 2rem;
+}
+
+.utag-label {
+  background-color: rgb(120, 18, 120);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.vtg-label {
+  background-color: rgb(22, 115, 22);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.version {
+  margin-left: 5rem;
+  font-size: 1.2rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.version:hover {
+  text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
+  transform: scale(1.5);
+}

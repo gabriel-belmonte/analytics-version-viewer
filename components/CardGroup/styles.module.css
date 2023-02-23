@@ -1,0 +1,19 @@
+.container:not(:first-child) {
+  margin: 2rem 0;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: rgb(44, 81, 115);
+  font-size: 2.5rem;
+  height: auto;
+}
+
+.group {
+  margin-top: 2rem;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+}
