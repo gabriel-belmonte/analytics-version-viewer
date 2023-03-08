@@ -11,9 +11,14 @@ export default function VersionText({ text }: { text: string }) {
   return (
     <button
       class="inline-flex items-center w-48 bg-green-900 text-green-300 text-base font-medium px-2.5 py-0.5 rounded-full cursor-pointer hover:bg-green-800"
-      onClick={(event) => onClick}
+      onClick={onClick}
     >
-      <span class="w-2 h-2 mr-2 bg-green-500 rounded-full" />
+      <span class="relative flex h-2 w-2  mr-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75">
+        </span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500">
+        </span>
+      </span>
       {text}
     </button>
   );
