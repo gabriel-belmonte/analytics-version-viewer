@@ -3,5 +3,5 @@
     <path
         style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
         d="M 29.984375 1.9863281 A 1.0001 1.0001 0 0 0 29.839844 2 L 7 2 L 7 48 L 43 48 L 43 47 L 43 15.167969 A 1.0001 1.0001 0 0 0 43 14.841797 L 43 14.585938 L 42.806641 14.392578 A 1.0001 1.0001 0 0 0 42.617188 14.203125 L 30.791016 2.3769531 A 1.0001 1.0001 0 0 0 30.603516 2.1894531 L 30.414062 2 L 30.154297 2 A 1.0001 1.0001 0 0 0 29.984375 1.9863281 z M 9 4 L 29 4 L 29 16 L 41 16 L 41 46 L 9 46 L 9 4 z M 31 5.4140625 L 39.585938 14 L 31 14 L 31 5.4140625 z M 26 22 L 22 38 L 24 38 L 28 22 L 26 22 z M 18.140625 24.486328 L 14.832031 30 L 18.142578 35.513672 L 19.857422 34.486328 L 17.166016 30 L 19.857422 25.513672 L 18.140625 24.486328 z M 31.855469 24.486328 L 30.140625 25.513672 L 32.833984 30 L 30.142578 34.486328 L 31.857422 35.513672 L 35.166016 30 L 31.855469 24.486328 z"
-        font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible" fill="#d7d6d6" />
+        font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible" fill="white" />
 </svg>
