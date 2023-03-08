@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <span class="inline-flex items-center justify-center w-48 bg-yellow-900 text-yellow-300 text-base font-medium px-2.5 py-0.5 rounded-full hover:bg-yellow-800">
       <svg
-        class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+        class="animate-spin mr-3 h-5 w-5"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

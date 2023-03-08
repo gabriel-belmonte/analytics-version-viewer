@@ -1,7 +1,7 @@
 import { Handlers } from "$fresh/server.ts";
 
-const utagRegex = /utag.loader.*?,/g;
-const vtgRegex = /getVersion\(\)\{(.*?)\}/g;
+const utagRegex = /utag.loader.*?,/;
+const vtgRegex = /getVersion\(\)\{(.*?)\}/;
 
 export const handler: Handlers = {
   async GET(req: Request) {
@@ -51,10 +51,47 @@ async function fetchFile(fileURL: string) {
       .pop()
       ?.slice(0, -2);
 
+    const convivaVersion = await fetchConvivaFile(parsedResponse, fileURL);
+
     return {
       utagVersion,
       vtgVersion,
+      convivaVersion,
     };
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function fetchConvivaFile(utagFileText: string, fileURL: string) {
+  try {
+    const scriptUtagVersion = utagFileText
+      ?.split('"6":{')
+      ?.pop()
+      ?.split("v:")
+      ?.pop()
+      ?.split(",")[0];
+
+    if (scriptUtagVersion) {
+      const targetUrl = fileURL.replace(
+        "/utag.js",
+        `/utag.6.js?utv=ut4.48.${scriptUtagVersion}`
+      );
+
+      const rawResponse = await fetch(targetUrl);
+
+      if (!rawResponse?.ok) {
+        throw new Error("Error");
+      }
+
+      const parsedResponse = await rawResponse.text();
+
+      const convivaVersion = parsedResponse?.match(
+        /T\.version="([^"]*)",/
+      )?.[1];
+
+      return convivaVersion;
+    }
   } catch (error) {
     console.error(error);
   }
