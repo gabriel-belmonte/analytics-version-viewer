@@ -15,7 +15,7 @@ export default function CardGroup({
           {groupName}
         </h3>
       </div>
-      <div class="flex flex-wrap items-center justify-around">
+      <div class="flex items-center overflow-x-scroll flex-nowrap	">
         {urlList.map((url) => <Card fileURL={url} />)}
       </div>
     </>

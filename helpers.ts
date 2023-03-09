@@ -1,5 +1,5 @@
 const PROVIDER_LIST = ["Sky", "Foxtel", "Orange", "Virgin Media"];
-const ANALYTICS_ENV_LIST = ["dev", "qa", "prod"];
+const ANALYTICS_ENV_LIST = ["sandbox", "dev", "qa", "prod", "Prod2"];
 
 type ProviderUrls = { [x: string]: string[] };
 
