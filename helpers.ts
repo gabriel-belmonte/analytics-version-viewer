@@ -12,9 +12,11 @@ const apiUrlGenerator = (providers: string[], envs: string[]): ProviderUrls => {
     envs.forEach((env) => {
       finalProviderURls[provider] = [
         ...finalProviderURls[provider],
-        `api/utag?provider=${provider
-          .toLowerCase()
-          .replace(" ", "")}&env=${env}`,
+        `api/utag?provider=${
+          provider
+            .toLowerCase()
+            .replace(" ", "")
+        }&env=${env}`,
       ];
     })
   );
@@ -24,7 +26,7 @@ const apiUrlGenerator = (providers: string[], envs: string[]): ProviderUrls => {
 
 export const apiProviderUrls = apiUrlGenerator(
   PROVIDER_LIST,
-  ANALYTICS_ENV_LIST
+  ANALYTICS_ENV_LIST,
 );
 export const providerUrls = apiUrlGenerator(PROVIDER_LIST, ANALYTICS_ENV_LIST);
 
@@ -37,7 +39,7 @@ export const getGithubUrl = (provider: string): string => {
 };
 
 export const getFileUrl = (provider: string, env: string): string => {
-  return ` https://tags.tiqcdn.com/utag/cbsi/pplusintl-${provider}/${env}/utag.js`;
+  return `https://tags.tiqcdn.com/utag/cbsi/pplusintl-${provider}/${env}/utag.js`;
 };
 
 export const getAnalyticsEnv = (baseUrl: string): string => {

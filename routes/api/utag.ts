@@ -7,12 +7,13 @@ export const handler: Handlers = {
   async GET(req: Request) {
     try {
       const params = new URLSearchParams(
-        new URL(decodeURIComponent(req.url)).search
+        new URL(decodeURIComponent(req.url)).search,
       );
 
       const provider = params.get("provider");
       const env = params.get("env");
-      const targetUrl = `https://tags.tiqcdn.com/utag/cbsi/pplusintl-${provider}/${env}/utag.js`;
+      const targetUrl =
+        `https://tags.tiqcdn.com/utag/cbsi/pplusintl-${provider}/${env}/utag.js`;
 
       if (provider && env) {
         const response = await fetchFile(targetUrl);
@@ -65,17 +66,20 @@ async function fetchFile(fileURL: string) {
 
 async function fetchConvivaFile(utagFileText: string, fileURL: string) {
   try {
-    const scriptUtagVersion = utagFileText
-      ?.split('"6":{')
+    const UtagFilesScript = utagFileText
+      ?.split("utag.loader.cfgsort=[")
       ?.pop()
-      ?.split("v:")
-      ?.pop()
-      ?.split(",")[0];
+      ?.split("];}")[0];
 
-    if (scriptUtagVersion) {
+    const is6 = UtagFilesScript?.includes("6");
+    const is7 = UtagFilesScript?.includes("7");
+
+    const selectedScript = (is6 && 6) || (is7 && 7);
+
+    if (UtagFilesScript && selectedScript) {
       const targetUrl = fileURL.replace(
         "/utag.js",
-        `/utag.6.js?utv=ut4.48.${scriptUtagVersion}`
+        `/utag.${selectedScript}.js`,
       );
 
       const rawResponse = await fetch(targetUrl);
@@ -87,10 +91,14 @@ async function fetchConvivaFile(utagFileText: string, fileURL: string) {
       const parsedResponse = await rawResponse.text();
 
       const convivaVersion = parsedResponse?.match(
-        /T\.version="([^"]*)",/
+        /T\.version="([^"]*)",/,
       )?.[1];
 
-      return convivaVersion;
+      const convivaVersionAlt = parsedResponse?.match(
+        /Constants={version:"([^"]*)",/,
+      )?.[1];
+
+      return convivaVersion || convivaVersionAlt;
     }
   } catch (error) {
     console.error(error);
