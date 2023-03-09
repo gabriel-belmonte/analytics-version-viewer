@@ -18,7 +18,7 @@ export default function Notifier() {
 
   return (
     <div
-      class={`bg-green-600 text-white rounded-2xl p-4 absolute right-2.5 top-2.5 opacity-${shouldShow} transition-opacity duration-1000`}
+      class={`bg-green-600 w-auto inline-block text-white rounded-2xl p-4 fixed right-2.5 top-2.5 opacity-${shouldShow} transition-opacity duration-1000`}
     >
       You copied to clipboard
     </div>

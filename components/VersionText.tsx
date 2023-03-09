@@ -10,7 +10,7 @@ const onClick = (ev: JSXInternal.TargetedMouseEvent<HTMLButtonElement>) => {
 export default function VersionText({ text }: { text: string }) {
   return (
     <button
-      class="inline-flex items-center w-48 bg-green-900 text-green-300 text-base font-medium px-2.5 py-0.5 rounded-full cursor-pointer hover:bg-green-800"
+      class="inline-flex items-center w-48 bg-green-900 text-green-300 text-base font-medium px-2.5 py-0.5 rounded-full cursor-pointer hover:bg-green-800 focus:outline-none"
       onClick={onClick}
     >
       <span class="relative flex h-2 w-2  mr-2">
