@@ -6,7 +6,7 @@ export default function Error() {
         </span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500">
         </span>
-      </span>{" "}
+      </span>
       Error
     </span>
   );

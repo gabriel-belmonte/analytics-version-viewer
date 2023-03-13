@@ -18,12 +18,14 @@ const analyticsItems = [
   },
 ];
 
+type CardBodyProps = {
+  versions?: { [key: string]: string };
+  isError: boolean;
+  isLoading: boolean;
+};
+
 export default function CardBody(
-  { versions, isError, isLoading }: {
-    versions?: { [key: string]: string };
-    isError: boolean;
-    isLoading: boolean;
-  },
+  { versions, isError, isLoading }: CardBodyProps,
 ) {
   return (
     <>

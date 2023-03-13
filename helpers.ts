@@ -1,5 +1,8 @@
-const PROVIDER_LIST = ["Sky", "Foxtel", "Orange", "Virgin Media"];
-const ANALYTICS_ENV_LIST = ["sandbox", "dev", "qa", "prod", "Prod2"];
+import CONFIG from "./config.json" assert {
+  type: "json",
+};
+
+const { ANALYTICS_ENV_LIST, PROVIDER_LIST } = CONFIG;
 
 type ProviderUrls = { [x: string]: string[] };
 
@@ -24,15 +27,7 @@ const apiUrlGenerator = (providers: string[], envs: string[]): ProviderUrls => {
   return finalProviderURls;
 };
 
-export const apiProviderUrls = apiUrlGenerator(
-  PROVIDER_LIST,
-  ANALYTICS_ENV_LIST,
-);
 export const providerUrls = apiUrlGenerator(PROVIDER_LIST, ANALYTICS_ENV_LIST);
-
-export const utagRegex = /utag.loader.*?,/g;
-export const vtgRegex = /getVersion\(\)\{(.*?)\}/g;
-export const utf8Decoder = new TextDecoder("utf-8");
 
 export const getGithubUrl = (provider: string): string => {
   return `https://github.com/cbsi-cdmdigmops/Tealium_Entertainment/blob/master/pplusintl/tracking-config/pplusintl-temp-${provider}.js`;

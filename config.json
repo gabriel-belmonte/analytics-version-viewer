@@ -1,0 +1,4 @@
+{
+  "PROVIDER_LIST": ["Sky", "Foxtel", "Orange", "Virgin Media"],
+  "ANALYTICS_ENV_LIST": ["sandbox", "dev", "qa", "prod", "Prod2"]
+}
