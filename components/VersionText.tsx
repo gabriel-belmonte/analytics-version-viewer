@@ -1,7 +1,6 @@
-import type { JSXInternal } from "https://esm.sh/v107/preact@10.11.0/src/jsx";
 import { showNotifier } from "../islands/Notifier.tsx";
 
-const onClick = (ev: JSXInternal.TargetedMouseEvent<HTMLButtonElement>) => {
+const onClick = (ev: any) => {
   const info = ev?.target?.textContent;
   navigator.clipboard.writeText(info);
   showNotifier.value = true;
