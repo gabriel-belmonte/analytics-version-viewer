@@ -1,4 +1,4 @@
-import CONFIG from "./config.json" assert {
+import CONFIG from "./appConfig.json" assert {
   type: "json",
 };
 

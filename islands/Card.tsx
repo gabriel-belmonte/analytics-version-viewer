@@ -32,7 +32,7 @@ export default function Card({ fileURL }: { fileURL: string }) {
   return (
     <div class="block max-w-sm p-6 m-2 border border-gray-800 bg-gray-800 rounded-lg shadow-md">
       <CardHeader fileURL={fileURL} />
-      <hr class="h-px my-8 bg-gray-700 border-0" />
+      <hr class="h-px my-4 bg-gray-700 border-0" />
       <div class="flex flex-col text-lg">
         <CardBody
           versions={versions}
